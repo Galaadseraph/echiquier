@@ -1,27 +1,22 @@
 package fr.imie.echiquier;
 
-public abstract class Piece 
-{
-	public Piece getPiece(Coordonnees c) throws EchiquierException
-	{
-		for (Piece p : Main.getPieces())
-		{
-			if (c.equals(p.position))
-				return p;
-		}
-		throw new EchiquierException("Case vide");
-	}
-	
+import java.io.Serializable;
+
+public abstract class Piece implements Serializable
+{	
 	protected CodePiece type;
 	protected Coordonnees position;
 	protected String couleur;
+	
+	protected CodePiece getType(){return type;}
+	protected String getCouleur(){return couleur;}
 	
 	protected boolean positionPossible(Coordonnees position)
 	{
 		Piece p;
 		try
 		{
-			p = getPiece(position);
+			p = Main.getPiece(position);
 		}
 		catch (EchiquierException e)
 		{
