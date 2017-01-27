@@ -23,9 +23,9 @@ public abstract class Piece implements Serializable
 			//Case vide...
 			return true;
 		}
-		if (p.couleur == this.couleur)
+		//if (p.couleur == this.couleur)
 			return false;
-		else return true;
+		//else return true;
 	}
 	protected void deplacement(){}
 	
