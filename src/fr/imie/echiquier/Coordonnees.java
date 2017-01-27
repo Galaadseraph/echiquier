@@ -5,6 +5,9 @@ public class Coordonnees
 	private int abscisse;
 	private int ordonnee;
 	
+	public int getAbscisse(){return abscisse;}
+	public int getOrdonne(){return ordonnee;}
+	
 	public Coordonnees(int x, int y)
 	{
 		this.abscisse = x;
