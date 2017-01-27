@@ -1,6 +1,8 @@
 package fr.imie.echiquier;
 
-public class Coordonnees 
+import java.io.Serializable;
+
+public class Coordonnees implements Serializable
 {
 	private int abscisse;
 	private int ordonnee;

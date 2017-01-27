@@ -1,6 +1,8 @@
 package fr.imie.echiquier;
 
-public class Pion extends Piece
+import java.io.Serializable;
+
+public class Pion extends Piece implements Serializable
 {
 	//Region Deplacement
 	public void Deplacement(Coordonnees cible) throws EchiquierException

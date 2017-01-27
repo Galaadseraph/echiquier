@@ -4,13 +4,18 @@ import java.io.Serializable;
 
 public abstract class Piece implements Serializable
 {	
+	//Region Attributs
 	protected CodePiece type;
 	protected Coordonnees position;
 	protected String couleur;
+	//EndRegion
 	
+	//Region Gets
 	protected CodePiece getType(){return type;}
 	protected String getCouleur(){return couleur;}
+	//EndRegion
 	
+	//Region Methodes
 	protected boolean positionPossible(Coordonnees position)
 	{
 		Piece p;
@@ -32,6 +37,7 @@ public abstract class Piece implements Serializable
 	
 	public String toString()
 	{
-		return "" + type.getSymbole() + ": " + type.getNom() + " " + couleur + this.position.toString();
+		return "" + type.getSymbole() + ": " + type.getNom() + " " + couleur + " position : "+this.position.toString();
 	}
+	//EndRegion
 }

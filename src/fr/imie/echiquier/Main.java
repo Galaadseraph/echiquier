@@ -8,8 +8,15 @@ public class Main
 {
 	//Region Singleton
 	private static List<Piece> Pieces = new ArrayList<Piece>();
-	public static List<Piece>getPieces(){return Pieces;}
-	public void ajouterPiece(Piece p){getPieces().add(p);}
+	public static List<Piece>getPieces()
+	{
+		if (Pieces == null)
+		{
+			charger();
+		}
+		return Pieces;
+	}
+	public static void ajouterPiece(Piece p){getPieces().add(p);}
 	public static Piece getPiece(Coordonnees c) throws EchiquierException
 	{
 		for (Piece p : getPieces())
@@ -32,13 +39,13 @@ public class Main
 	//EndRegion
 	
 	//Region Affichage
-	private void intersect(){System.out.println("---+---+---+---+---+---+---+---+---|");}
-	private void header(){System.out.println("---+-------------------------------+");}
-	private void footer(){System.out.println("   [ A | B | C | D | E | F | G | H |");}
-	private void coordonnee(int i){System.out.print(" "+ i + " |");}
-	private void casevide(){System.out.print("   |");}
-	private void casePiece(Piece p){System.out.println(" " +p.getType().getSymbole() +" |");}
-	public void afficher()
+	private static void intersect(){System.out.println("---+---+---+---+---+---+---+---+---|");}
+	private static void header(){System.out.println("---+-------------------------------+");}
+	private static void footer(){System.out.println("   [ A | B | C | D | E | F | G | H |");}
+	private static void coordonnee(int i){System.out.print(" "+ (++i) + " |");}
+	private static void casevide(){System.out.print("   |");}
+	private static void casePiece(Piece p){System.out.print(" " +p.getType().getSymbole() +" |");}
+	public static void afficher()
 	{
 		header();
 		for (int i =7; i >=0;i--)//ordonnees
@@ -68,6 +75,7 @@ public class Main
 					else casevide();
 				}
 			}
+			System.out.println();
 			intersect();
 		}
 		footer();
@@ -95,7 +103,7 @@ public class Main
 	//EndRegion
 	
 	//Region IO
-	private int sauvegarder()
+	private static int sauvegarder()
 	{
 		try
 		{
@@ -116,7 +124,7 @@ public class Main
 		}
 		return 0;
 	}
-	private int charger()
+	private static int charger()
 	{
 		try
 		{
@@ -144,6 +152,10 @@ public class Main
 	
 	public static void main(String args[])
 	{
-		
+		//getPieces();
+		charger();
+		//ajouterPiece(new Pion(new Coordonnees(0,1),"Blanc"));
+		afficher();
+		//sauvegarder();
 	}
 }
