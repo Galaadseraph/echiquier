@@ -1,3 +1,4 @@
+package fr.imie.echiquier;
 
 public class Main 
 {
