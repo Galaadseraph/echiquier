@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Pion extends Piece implements Serializable
 {
 	//Region Deplacement
-	public void Deplacement(Coordonnees cible) throws EchiquierException
+	public void deplacement(Coordonnees cible) throws EchiquierException
 	{
 		//Dans la même colonne
 		if (this.position.getAbscisse() == cible.getAbscisse())

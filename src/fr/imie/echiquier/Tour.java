@@ -3,7 +3,7 @@ package fr.imie.echiquier;
 public class Tour extends Piece
 {
 	//Region Deplacement
-		public void Deplacement(Coordonnees cible) throws EchiquierException
+		public void deplacement(Coordonnees cible) throws EchiquierException
 		{
 			//Dans la même colonne
 			if (this.position.getAbscisse() == cible.getAbscisse())

@@ -30,7 +30,7 @@ public abstract class Piece implements Serializable
 			return false;
 		//else return true;
 	}
-	abstract protected void deplacement();
+	abstract protected void deplacement(Coordonnees cible) throws EchiquierException;
 	
 	
 	public String toString()
