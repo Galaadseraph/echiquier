@@ -17,14 +17,15 @@ public class Main
 		return Pieces;
 	}
 	public static void ajouterPiece(Piece p){getPieces().add(p);}
-	public static Piece getPiece(Coordonnees c) throws EchiquierException
+	public static Piece getPiece(Coordonnees c) //throws EchiquierException
 	{
 		for (Piece p : getPieces())
 		{
 			if (c.equals(p.position))
 				return p;
 		}
-		throw new EchiquierException("Case vide");
+		return null;
+		//throw new EchiquierException("Case vide");
 	}
 	public static int getPoints(String couleur)
 	{
@@ -56,24 +57,25 @@ public class Main
 				Piece p = null;
 				boolean isSet = false;
 				Coordonnees c = new Coordonnees(j,i);
-				try
-				{
+				//try
+				//{
 					p = getPiece(c);
+					if (p != null)
 					isSet = true;
-				}
-				catch (EchiquierException e)
-				{
-					p = null;
-					isSet = false;
-				}
-				finally
-				{
+				//}
+				//catch (EchiquierException e)
+				//{
+				//	p = null;
+				//	isSet = false;
+				//}
+				//finally
+				//{
 					if (isSet)
 					{
 						casePiece(p);
 					}
 					else casevide();
-				}
+				//}
 			}
 			System.out.println();
 			intersect();

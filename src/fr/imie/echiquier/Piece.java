@@ -19,20 +19,18 @@ public abstract class Piece implements Serializable
 	protected boolean positionPossible(Coordonnees position)
 	{
 		Piece p;
-		try
-		{
-			p = Main.getPiece(position);
-		}
-		catch (EchiquierException e)
+		p = Main.getPiece(position);
+		if(p == null)
 		{
 			//Case vide...
 			return true;
 		}
+		else
 		//if (p.couleur == this.couleur)
 			return false;
 		//else return true;
 	}
-	protected void deplacement(){}
+	abstract protected void deplacement();
 	
 	
 	public String toString()
